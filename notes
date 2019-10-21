@@ -1,0 +1,74 @@
+Instagram/Pinterest
+Website which allows users to choose pictures to be saved into their own profile/albums
+Strech: Users like photo and the most liked one gets featured on homepage for i.e. 1 week; Artist class (User account - Users are Artists (but don’t have to))
+
+- Like class
+belongs_to :picture
+belongs_to :user
+   Attributes:
+user_id
+picture_id
+--------------------------------------------------------------------------------
+Models:
+
+
+- User
+has_many :pictures, through: :user_galleries
+has_many :albums
+has_many: likes
+   Attributes:
+username
+bio
+
+
+- UserGallery
+belongs_to :user
+has_many :pictures
+has_many :albums
+   Attributes:
+name
+user_id
+
+
+Instagram/Pinterest
+Website which allows users to choose pictures to be saved into their own profile/albums
+Strech: Users like photo and the most liked one gets featured on homepage for i.e. 1 week; Artist class (User account - Users are Artists (but don’t have to))
+- Like
+belongs_to :picture
+belongs_to :user
+   Attributes:
+user_id
+picture_id
+--------------------------------------------------------------------------------
+Models:
+- User
+has_many :albums
+   Attributes:
+username
+password
+bio
+
+
+- Album
+belongs_to :user
+has_many :album_pictures
+has_many :pictures, through: :album_pictures
+   Attributes:
+album_name
+user_id
+main: boolean
+
+
+- Album_Picture
+belongs_to :albums
+belongs_to :pictures
+	Attributes:
+album_id
+picture_id
+
+
+- Picture
+has_many :album_pictures
+has_many :albums, through: :album_pictures
+   Attributes:
+image_url
