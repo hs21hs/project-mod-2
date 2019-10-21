@@ -5,4 +5,8 @@ Rails.application.routes.draw do
 
 resources :users
 resources :albums
+get '/sessions/new', to: 'sessions#new', as: 'new_session'
+post '/sessions', to: 'sessions#create', as: 'sessions'
+delete '/sessions', to: 'session#destroy'
+
 end

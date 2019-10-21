@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_19_175122) do
+ActiveRecord::Schema.define(version: 2019_10_21_123727) do
 
   create_table "album_pictures", force: :cascade do |t|
     t.integer "album_id"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_10_19_175122) do
     t.string "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
 end
