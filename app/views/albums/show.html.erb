@@ -1,0 +1,5 @@
+<center>
+<h1><%= @album.album_name %></h1>
+<% @album.pictures.each do |picture| %>
+    <h2><%= picture.image_url %></h2>
+    <% end %>

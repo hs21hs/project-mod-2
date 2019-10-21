@@ -4,14 +4,17 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-
   def new
     @user=User.new
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+  
   def create
     @user=User.create(user_params)
-    Album.create(album_name:"#{@user.username}'s main album", main:true, user_id: @user.id)
+    @album=Album.create(album_name:"#{@user.username}'s main album", main:true, user_id: @user.id)
   end
 
   private 
