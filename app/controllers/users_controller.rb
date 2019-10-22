@@ -2,14 +2,23 @@ class UsersController < ApplicationController
   
   def index
     @users = User.all
+
   end
 
   def new
     @user = User.new
+    
   end
 
   def show
     @user = User.find(params[:id])
+      if @user == current_user
+
+        @main_album = current_user.albums.find_by(main: true)
+      else
+        flash.now[:notice] = "Sorry, you cant access this page"
+      end
+
   end
   
   def create
