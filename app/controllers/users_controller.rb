@@ -12,9 +12,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-<<<<<<< HEAD
-    
-=======
       if @user == current_user
 
         @main_album = current_user.albums.find_by(main: true)
@@ -22,7 +19,7 @@ class UsersController < ApplicationController
         flash.now[:notice] = "Sorry, you cant access this page"
       end
 
->>>>>>> profile
+
   end
   
   def create

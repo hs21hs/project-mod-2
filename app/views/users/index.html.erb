@@ -1,6 +1,6 @@
 
 
-
+<center> 
 <% @users.each do |user| %>
     <p>User: <%= link_to user.username, user_path(user.id) %> </p>
      <% user.albums.each do |album|%> 

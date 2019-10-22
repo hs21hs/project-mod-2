@@ -1,5 +1,4 @@
 <center>
-<<<<<<< HEAD
 <body>
 <% if current_user %>
 you are logged in as <%= current_user.username %>
@@ -7,12 +6,10 @@ you are logged in as <%= current_user.username %>
 
 </body>
 
-=======
 <%if flash[:notice] %>
-<%=flash[:notice]%>
+<%=flash.now[:notice]%>
 
 <%else%>
->>>>>>> profile
 <h1><%= @user.username %></h1>
 
 <h2> Biography: <%= @user.bio %></h2>
