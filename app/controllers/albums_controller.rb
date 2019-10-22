@@ -6,6 +6,10 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
+
+    unless current_user.id == @album.user_id
+      flash[:notice] = "Sorry, you cant access this page"
+    end
   end
 
   private
