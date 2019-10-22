@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user=User.new
+    @user = User.new
   end
 
   def show
@@ -14,8 +14,12 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user=User.create(user_params)
-    @album=Album.create(album_name:"#{@user.username}'s main album", main:true, user_id: @user.id)
+    @user = User.create(user_params)
+    if @user.valid?
+      session[:user_id] = @user.id
+      @album = Album.create(album_name:"#{@user.username}'s main album", main:true, user_id: @user.id)
+      redirect_to user_path(@user)
+    end
   end
 
   private 

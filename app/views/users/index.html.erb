@@ -1,10 +1,10 @@
-<h1> this is the index/home page </h1>
-<h3><%= link_to "log in", new_session_path%></h3>
+
 
 
 <% @users.each do |user| %>
-    <p> <%= user.username %> </p>
+    <p>User: <%= link_to user.username, user_path(user.id) %> </p>
      <% user.albums.each do |album|%> 
-        <p> <%= album.album_name%> </p>
+        <p>Album: <%= album.album_name%> </p>
+    <% end %>
 <% end %>
-<% end %>
+
