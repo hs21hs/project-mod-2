@@ -1,0 +1,19 @@
+<center>
+<% if flash[:notice] %>
+    <%= flash[:notice] %>
+<% end %>
+
+<h1>Log in User</h1>
+<%= form_tag sessions_path do |f|%>
+    <%= label :user, :username %>
+    <%= text_field :user, :username %>
+
+    <%= label :user, :password %>
+    <%= password_field :user, :password %>
+
+    <%= submit_tag "Confirm" %>
+    
+<% end %>
+<br>
+<%= link_to "Back", home_index_path %>
+
