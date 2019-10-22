@@ -1,10 +1,13 @@
 class SessionsController < ApplicationController
+
+       
    
     def index
     end
 
     def new
         @user = User.new
+
     end
 
     def create
@@ -23,4 +26,5 @@ class SessionsController < ApplicationController
         redirect_to home_index_path
     end
 end
+
 
