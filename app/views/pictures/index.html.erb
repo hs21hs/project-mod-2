@@ -3,9 +3,49 @@
 <%= link_to "Log out", logout_path, method: :delete %><br>
 </div>
 <center>
-<h1> PicYours </h1>
+<h1> PicYours - Find & store your favourite Pictures</h1>
 <br>
-<p> ALL PICTURES TO BE SHOWN FOR THE USER TO ADD TO THEIR ALBUM </p>
-<br>
-<h2> Browse, find & store your favourite Pictures </h2>
+
+<style>
+{
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  padding: 10px;
+  width: 400px;
+  height: 400px;
+}
+
+.column-img {
+    width: 350px;
+    height: 350px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+
+<div>
+<% @pictures.each do |pic| %>
+    <% @url = pic.image_url %>
+    <div class="column">
+    <a target="_blank" href= <%= @url %>>
+    <img class="column-img" src= <%= @url %>  >
+    </a>
+    <p>Save this picture</p>
+    </div>
+<% end %>
+</div>
+
+
+
+
+
+
+
 
