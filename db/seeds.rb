@@ -20,6 +20,7 @@
 
 # Picture.create(image_url:"http://4.bp.blogspot.com/-aWUAYlseIf8/TldEFwMb6uI/AAAAAAAAXXw/jG81eruoB9Q/s1600/Nice%2Bcar%2Bimages-2.jpg")
 
-# AlbumPicture.create(album_id:2, picture_id:3)
-# AlbumPicture.create(album_id:1, picture_id:4)
+ #AlbumPicture.create(album_id:2, picture_id:3)
+ #AlbumPicture.create(album_id:1, picture_id:4)
 
+User.create(username:"testerrrr", password:"1", bio:"i am a testerrrr user")

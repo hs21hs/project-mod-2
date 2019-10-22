@@ -1,0 +1,10 @@
+<h1> new session </h1>
+
+<%= form_tag sessions_path do %>
+
+<%= label :user, :username %>
+<%= text_field :user, :username %>
+
+<%= submit_tag "log in" %>
+
+<% end %>
