@@ -20,8 +20,9 @@
 
 # Picture.create(image_url:"http://4.bp.blogspot.com/-aWUAYlseIf8/TldEFwMb6uI/AAAAAAAAXXw/jG81eruoB9Q/s1600/Nice%2Bcar%2Bimages-2.jpg")
 
-# AlbumPicture.create(album_id:2, picture_id:3)
-# AlbumPicture.create(album_id:1, picture_id:4)
+ #AlbumPicture.create(album_id:2, picture_id:3)
+ #AlbumPicture.create(album_id:1, picture_id:4)
+
 
 # u1 = User.create(username: "Sarah", password: "sarah1", bio: "Life is an adventure...")
 
@@ -60,5 +61,6 @@
 # p28 = Picture.create(image_url: "https://images.unsplash.com/photo-1532951163096-1817afa77fdc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80")
 # p29 = Picture.create(image_url: "https://images.unsplash.com/photo-1518790373778-cd7535c0117f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1259&q=80")
 # p30 = Picture.create(image_url: "https://images.unsplash.com/photo-1518858285353-45d1d5946b5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80")
+
 
 
