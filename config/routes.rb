@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 resources :home, only: :index
 resources :users
 resources :albums
+resources :pictures
 
 get '/sessions/new', to: 'sessions#new', as: 'new_session'
 post '/sessions', to: 'sessions#create', as: 'sessions'
-delete '/sessions', to: 'session#destroy'
-get '/sessions', to: 'sessions#index', as: 'home'
+delete '/sessions', to: 'sessions#destroy', as: 'logout'
 
 
 end
