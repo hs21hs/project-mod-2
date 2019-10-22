@@ -1,7 +1,8 @@
 <center>
-<% if @user && @user.authenticate(params[:user][:password]) == false %>
-    <%= flash[:notice] = "Sorry, we can't find a user with that username and password" %>
+<% if flash[:notice] %>
+    <%= flash[:notice] %>
 <% end %>
+
 <h1>Log in User</h1>
 <%= form_tag sessions_path do |f|%>
     <%= label :user, :username %>

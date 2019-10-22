@@ -4,6 +4,6 @@
     <% @url = picture.image_url %>
     <img src= <%= @url %> id="image" data-id>
 <% end %><br>
-<%= link_to "Back", albums_path %>
+<%= link_to "Back", user_path(@album.user.id) %>
 
 
