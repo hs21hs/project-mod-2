@@ -1,11 +1,10 @@
 <center>
 <body>
 <% if current_user %>
-you are logged in as <%= current_user.username %>
+You are logged in as <%= current_user.username %>
 <% end %>
-
 </body>
-
+<br>
 <%if flash[:notice] %>
 <%=flash.now[:notice]%>
 
@@ -14,16 +13,16 @@ you are logged in as <%= current_user.username %>
 
 <h2> Biography: <%= @user.bio %></h2>
 <h3><% @user.albums.each do |album| %>
-    <p> Album: <%= link_to album.album_name, album_path(album.id) %></p>
+    <p> View: <%= link_to album.album_name, album_path(album.id) %></p>
 <% end %>
 <br>
 <br>
 
 <%end%>
 
-
-
-<%= link_to "Back to all users", users_path %>
+<br>
+<br>
+<%= link_to "Back to main page", pictures_path %>
 
 
 
