@@ -25,10 +25,10 @@
 
 <center>
 <%if flash[:notice]%>
-    <%=flash.now[:notice]%>
+   <p><%=flash.now[:notice]%></p>
 <%else%>
-    <h1>My Album: <%= @album.album_name %></h1>
-    <%= link_to "Back to my profile", user_path(current_user.id)%>
+    <h2>My Album: <%= @album.album_name %></h2>
+    <p><%= link_to "Back to my profile", user_path(current_user.id)%></p>
     <br>
     <br>
     <div>

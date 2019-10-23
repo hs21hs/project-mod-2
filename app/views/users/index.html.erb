@@ -1,5 +1,5 @@
 <center> 
-<h1>People who are using this website</h1>
+<h2>People who are using this website</h2>
 <% @users.each do |user| %>
     <p><%= link_to user.username, user_path(user.id) %> </p>
 <% end %>
