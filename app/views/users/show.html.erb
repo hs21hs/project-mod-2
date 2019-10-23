@@ -1,28 +1,27 @@
 <center>
 <body>
 <% if current_user %>
-You are logged in as <%= current_user.username %>
+<p>You are logged in as <%= current_user.username %></p>
 <% end %>
 </body>
 <br>
 <%if flash[:notice] %>
-<%=flash.now[:notice]%>
+<p><%=flash.now[:notice]%></p>
 
 <%else%>
-<h1><%= @user.username %></h1>
+<h2><%= @user.username %></h2>
 
-<h2> Biography: <%= @user.bio %></h2>
-<h3><% @user.albums.each do |album| %>
-    <p> View: <%= link_to album.album_name, album_path(album.id) %></p>
+<p>Biography: <%= @user.bio %></p>
+<% @user.albums.each do |album| %>
+    <p>View: <%= link_to album.album_name, album_path(album.id) %></p>
 <% end %>
 <br>
 <br>
-
 <%end%>
 
 <br>
 <br>
-<%= link_to "Back to main page", pictures_path %>
+<p><%= link_to "Back to main page", pictures_path %></p>
 
 
 
