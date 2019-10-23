@@ -1,10 +1,16 @@
 class AlbumPicturesController < ApplicationController
     def index
-       byebug 
+
     end
 
     def create
         AlbumPicture.create(album_picture_params)
+    end
+
+    def destroy
+        @picture = AlbumPicture.find(params[:id])
+        @picture.destroy
+        redirect_to album_path(current_user.id)
     end
 
     private

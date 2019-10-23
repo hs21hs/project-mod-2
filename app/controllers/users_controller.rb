@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.valid?
       session[:user_id] = @user.id
-      @album = Album.create(album_name:"#{@user.username}'s main album", main:true, user_id: @user.id)
+      @album = Album.create(album_name:"#{@user.username}'s Main Album", main:true, user_id: @user.id)
       redirect_to user_path(@user)
     end
   end

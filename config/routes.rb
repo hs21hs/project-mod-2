@@ -7,7 +7,7 @@ resources :albums, only: [:create,:new,:show,]
 
 resources :pictures
 
-resources :album_pictures, only:[:create,:index]
+resources :album_pictures, only:[:create,:index, :destroy]
 get '/sessions/new', to: 'sessions#new', as: 'new_session'
 post '/sessions', to: 'sessions#create', as: 'sessions'
 delete '/sessions', to: 'sessions#destroy', as: 'logout'

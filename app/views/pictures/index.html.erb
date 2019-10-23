@@ -14,7 +14,7 @@
 <%= link_to "Log out", logout_path, method: :delete %><br>
 </div>
 <center>
-<h2>PicYours - Find & store your favourite Pictures</h2>
+<h2>PicYours - find & store your favourite pictures</h2>
 <br>
 
 <style>
@@ -52,7 +52,7 @@
           <%= form_tag album_pictures_path do %>
               <%= hidden_field_tag(:picture_id, pic.id) %>
               <%= hidden_field_tag(:album_id, current_user.albums.find_by(main: true).id) %>
-              <%= submit_tag "Save Picture" %>
+              <%= submit_tag "Save to Main Album" %>
           <% end %>
       <% end %>
     </div>
