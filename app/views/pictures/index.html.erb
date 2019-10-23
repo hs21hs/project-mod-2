@@ -1,5 +1,9 @@
 <div align="right">
-<%= link_to "My Profile", user_path(current_user.id) %><br>
+
+<% if current_user %>
+  <%= link_to "My Profile", user_path(current_user.id) %><br>
+<% end %>
+
 <%= link_to "Log out", logout_path, method: :delete %><br>
 </div>
 <center>
@@ -37,8 +41,15 @@
     <a target="_blank" href= <%= @url %>>
     <img class="column-img" src= <%= @url %>  >
     </a>
-    <p>Save this picture</p>
+      <% if current_user %>
+          <%= form_tag album_pictures_path do %>
+              <%= hidden_field_tag(:picture_id, pic.id) %>
+              <%= hidden_field_tag(:album_id, current_user.albums.find_by(main: true).id) %>
+              <%= submit_tag "Save Picture" %>
+          <% end %>
+      <% end %>
     </div>
+
 <% end %>
 </div>
 
