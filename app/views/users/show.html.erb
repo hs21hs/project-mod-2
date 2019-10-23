@@ -1,10 +1,31 @@
 <center>
+<body>
+<% if current_user %>
+you are logged in as <%= current_user.username %>
+<% end %>
+
+</body>
+
+<%if flash[:notice] %>
+<%=flash.now[:notice]%>
+
+<%else%>
 <h1><%= @user.username %></h1>
+
 <h2> Biography: <%= @user.bio %></h2>
 <h3><% @user.albums.each do |album| %>
     <p> Album: <%= link_to album.album_name, album_path(album.id) %></p>
 <% end %>
 <br>
 <br>
-<%= link_to "Back", pictures_path %>
+
+<%end%>
+
+
+
+<%= link_to "Back to all users", users_path %>
+
+
+
+
 

@@ -1,9 +1,15 @@
 <center>
-<h1><%= @album.album_name %></h1>
-<% @album.pictures.each do |picture| %>
-    <% @url = picture.image_url %>
-    <img src= <%= @url %> id="image" data-id>
-<% end %><br>
-<%= link_to "Back", user_path(@album.user.id) %>
 
+<%if flash[:notice]%>
+    <%=flash.now[:notice]%>
+<%else%>
+
+    <h1><%= @album.album_name %></h1>
+    <% @album.pictures.each do |picture| %>
+        <% @url = picture.image_url %>
+        <img src= <%= @url %> id="image" data-id>
+    <% end %><br>
+        
+<%end%>
+<%= link_to "Back", users_path%>
 
