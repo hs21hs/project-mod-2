@@ -1,15 +1,47 @@
-<center>
+<style>
+{
+  box-sizing: border-box;
+}
 
+.column {
+  float: left;
+  padding: 10px;
+  width: 400px;
+  height: 400px;
+}
+
+.column-img {
+    width: 350px;
+    height: 350px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+
+
+<center>
 <%if flash[:notice]%>
     <%=flash.now[:notice]%>
 <%else%>
-
-    <h1><%= @album.album_name %></h1>
-    <% @album.pictures.each do |picture| %>
-        <% @url = picture.image_url %>
-        <img src= <%= @url %> id="image" data-id>
-    <% end %><br>
-        
+    <h1>My Album: <%= @album.album_name %></h1>
+    <%= link_to "Back to my profile", user_path(current_user.id)%>
+    <br>
+    <br>
+    <div>
+    <% @album.pictures.each do |pic| %>
+        <% @url = pic.image_url %>
+        <div class="column">
+        <a target="_blank" href= <%= @url %>>
+        <img class="column_img" src= <%= @url %> height="350" width="350" >
+        </a>
+        </div>
+    <% end %>
+    </div>
 <%end%>
-<%= link_to "Back", users_path%>
+</center>
+
 
