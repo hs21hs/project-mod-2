@@ -15,6 +15,7 @@
 <% @user.albums.each do |album| %>
     <p>View: <%= link_to album.album_name, album_path(album.id) %></p>
 <% end %>
+<p> <%= link_to "create new album", new_album_path %></p>
 <br>
 <br>
 <%end%>

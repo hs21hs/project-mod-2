@@ -12,6 +12,16 @@ class AlbumsController < ApplicationController
     end
   end
 
+  def new
+    @album = Album.new
+  end
+
+  def create
+    @album = Album.create(album_params)
+    # byebug
+    redirect_to user_path(current_user.id)
+  end
+
   private
 
   def album_params
