@@ -32,16 +32,28 @@
     <br>
     <br>
     <div>
-    <% @album.pictures.each do |pic| %>
+    <% @album.album_pictures.each do |alb_pic| %>
+        <% pic = alb_pic.picture %>
         <% @url = pic.image_url %>
         <div class="column">
         <a target="_blank" href= <%= @url %>>
         <img class="column_img" src= <%= @url %> height="350" width="350" >
         </a>
+          <% if current_user %>
+            <%= form_tag album_pictures_path do %>
+              <%= hidden_field_tag(:picture_id, pic.id) %>
+              <%= hidden_field_tag(:album_id, current_user.albums.find_by(main: true).id) %>
+              <%= collection_select :album_picture, :album_id, current_user.albums, :id, :album_name %>
+              <%= submit_tag "Save to Album" %>
+            <% end %>
+            <%= button_to "Delete from Album", album_picture_path(alb_pic), :method => :delete %>
+          <% end %>
         </div>
     <% end %>
     </div>
-<%end%>
+<% end %>
 </center>
+
+
 
 
