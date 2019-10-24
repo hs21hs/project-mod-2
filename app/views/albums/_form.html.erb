@@ -1,5 +1,7 @@
+<center>
+<div>
 <%= form_for(@album) do |f|%>
-    <%= f.label :albumname %>
+    <%= f.label :album_name %>
     <%= f.text_field :album_name %>
 
     <%= f.hidden_field(:main, value: false) %>
@@ -7,3 +9,5 @@
     
     <%= f.submit "Save Album" %>
 <% end %>
+<div>
+</center>
