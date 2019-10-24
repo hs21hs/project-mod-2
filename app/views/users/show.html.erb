@@ -13,8 +13,12 @@
 
 <p>Bio: <%= @user.bio %></p>
 <% @user.albums.each do |album| %>
-    <p>View: <%= link_to album.album_name, album_path(album.id) %> (<%= link_to "edit title", edit_album_path(album.id) %>) (<%= link_to "delete album", album_path(album.id), method: 'delete' %>)</p>
-<% end %>
+    <p>View: <%= link_to album.album_name, album_path(album.id) %> 
+    (<%= link_to "edit title", edit_album_path(album.id) %>) 
+    <% if album.main == false %>
+    (<%= link_to "delete album", album_path(album.id), method: 'delete' %>)</p>
+    <% end %>
+    <% end %>
 <br>
 <br>
 <p><%= link_to "Create new album", new_album_path %></p>
