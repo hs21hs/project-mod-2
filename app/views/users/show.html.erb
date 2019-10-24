@@ -1,7 +1,7 @@
 <center>
 <body>
 <% if current_user %>
-<p>You are logged in as <%= current_user.username %></p>
+<h3>You are logged in as <%= current_user.username %></h3>
 <% end %>
 </body>
 <br>
@@ -12,23 +12,27 @@
 <h2><%= @user.username %></h2>
 
 <p>Bio: <%= @user.bio %></p>
+<br>
 <% @user.albums.each do |album| %>
-    <p>View: <%= link_to album.album_name, album_path(album.id) %> 
+    <p>Album: <%= link_to album.album_name, album_path(album.id) %> 
     (<%= link_to "edit title", edit_album_path(album.id) %>) 
     <% if album.main == false %>
-    (<%= link_to "delete album", album_path(album.id), method: 'delete' %>)</p>
+        (<%= link_to "delete album", album_path(album.id), method: 'delete' %>)</p>
     <% end %>
-    <% end %>
-<br>
-<br>
-<p><%= link_to "Create new album", new_album_path %></p>
-<br>
-<br>
-<%end%>
+<% end %>
+
+<p>Create: <%= link_to "New album", new_album_path %></p>
+
+
 
 <br>
 <br>
+<%end%>
 <p><%= link_to "Back to main page", pictures_path %></p>
+
+<%= image_tag("https://images.unsplash.com/photo-1542382156909-9ae37b3f56fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1413&q=80", :size => "1069x658") %>
+<br>
+<br>
 
 
 
