@@ -14,9 +14,20 @@
 <p>Bio: <%= @user.bio %></p>
 <br>
 <% @user.albums.each do |album| %>
-    <p>Album: <%= link_to album.album_name, album_path(album.id) %> (<%= link_to "edit title", edit_album_path(album.id) %>) (<%= link_to "delete album", album_path(album.id), method: 'delete' %>)</p>
+    <p>Album: <%= link_to album.album_name, album_path(album.id) %> 
+    (<%= link_to "edit title", edit_album_path(album.id) %>) 
+    <% if album.main == false %>
+        (<%= link_to "delete album", album_path(album.id), method: 'delete' %>)</p>
+    <% end %>
 <% end %>
+
 <p>Create: <%= link_to "New album", new_album_path %></p>
+
+
+<br>
+<br>
+<p><%= link_to "Create new album", new_album_path %></p>
+<br>
 <br>
 <%end%>
 <p><%= link_to "Back to main page", pictures_path %></p>

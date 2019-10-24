@@ -96,11 +96,11 @@ p28 = Picture.create(image_url: "https://images.unsplash.com/photo-1532951163096
 p29 = Picture.create(image_url: "https://images.unsplash.com/photo-1518790373778-cd7535c0117f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1259&q=80")
 p30 = Picture.create(image_url: "https://images.unsplash.com/photo-1518858285353-45d1d5946b5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80")
 
-u1 = User.create(username: "Sarah", password: "sarah1", bio: "Life is an adventure...")
+#u1 = User.create(username: "Sarah", password: "sarah1", bio: "Life is an adventure...")
 
 # a1 = Album.create(album_name: "Inspo", main: false, user_id: u1.id)
 
-p1 = Picture.create(image_url: "https://images.unsplash.com/photo-1567923623191-f8110dc667db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80")
+#p1 = Picture.create(image_url: "https://images.unsplash.com/photo-1567923623191-f8110dc667db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80")
 # ap1 = AlbumPicture.create(album_id: a1.id, picture_id: p1.id)
 
 # Picture.create(image_url: "http://1.bp.blogspot.com/-6S0rKgWCM48/TldEGJW7NjI/AAAAAAAAXX4/ETP1o8H-jQo/s1600/Nice%2Bcar%2Bimages-3.jpg")

@@ -33,6 +33,7 @@
     <br>
     <div>
     <% @album.album_pictures.each do |alb_pic| %>
+      
         <% pic = alb_pic.picture %>
         <% @url = pic.image_url %>
         <div class="column">
@@ -45,7 +46,9 @@
               <%= collection_select :album_picture, :album_id, current_user.albums, :id, :album_name %>
               <%= submit_tag "Save to Album" %>
             <% end %>
-            <%= button_to "Delete from Album", album_picture_path(alb_pic), :method => :delete %>
+          
+              <%= button_to "Delete from Album", album_picture_path(alb_pic), :method => :delete %>
+          
           <% end %>
         </div>
     <% end %>
