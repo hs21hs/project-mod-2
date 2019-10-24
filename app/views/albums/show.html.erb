@@ -41,8 +41,7 @@
         </a>
           <% if current_user %>
             <%= form_tag album_pictures_path do %>
-              <%= hidden_field_tag(:picture_id, pic.id) %>
-              <%= hidden_field_tag(:album_id, current_user.albums.find_by(main: true).id) %>
+              <%= hidden_field_tag("album_picture[picture_id]", pic.id) %>
               <%= collection_select :album_picture, :album_id, current_user.albums, :id, :album_name %>
               <%= submit_tag "Save to Album" %>
             <% end %>

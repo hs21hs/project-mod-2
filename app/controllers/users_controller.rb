@@ -26,14 +26,14 @@ class UsersController < ApplicationController
     if @user.valid?
       session[:user_id] = @user.id
       @album = Album.create(album_name:"#{@user.username}'s Main Album", main:true, user_id: @user.id)
-      redirect_to user_path(@user)
+      redirect_to pictures_path
     end
   end
 
   private 
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :bio)
   end
 
 end

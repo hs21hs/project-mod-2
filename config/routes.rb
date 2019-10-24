@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
 resources :home, only: :index
 resources :users
-resources :albums, only: [:create,:new,:show,]
+resources :albums, only: [:create, :new, :show, :edit, :update, :destroy]
 
 resources :pictures
 
