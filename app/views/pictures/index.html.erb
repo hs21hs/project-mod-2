@@ -39,7 +39,8 @@
 </style>
 
 <div>
-<% @pictures.each do |pic| %>
+<% @ordered_pics = Picture.all.sort_by { |picture| picture.likes.length }.reverse %>
+<% @ordered_pics.each do |pic| %>
     <% @url = pic.image_url %>
     <div class="column">
     <a target="_blank" href= <%= @url %>>
@@ -59,7 +60,7 @@
               <%= form_tag likes_path do %>
                 <%= hidden_field_tag("like[user_id]", current_user.id) %>
                 <%= hidden_field_tag("like[picture_id]", pic.id) %>
-                <%= submit_tag "like picture" %>
+                <%= submit_tag "Like picture" %>
               <% end %>
             <% end %>
     </div>
