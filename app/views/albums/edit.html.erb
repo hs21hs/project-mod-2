@@ -1,4 +1,6 @@
 <center>
 <h2>Edit Title</h2>
 <%= render "form", album: @album %>
+<br>
+<p><%= link_to "Back to my profile", user_path(current_user.id) %></p>
 </center>
