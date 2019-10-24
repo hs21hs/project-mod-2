@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  get 'likes/create'
+  get 'likes/destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 resources :home, only: :index
 resources :users
 resources :albums, only: [:create, :new, :show, :edit, :update, :destroy]
-
+resources :likes, only: [:create, :destroy]
 resources :pictures
 
 resources :album_pictures, only:[:create,:index, :destroy]

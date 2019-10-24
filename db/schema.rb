@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_123727) do
+ActiveRecord::Schema.define(version: 2019_10_24_150420) do
 
   create_table "album_pictures", force: :cascade do |t|
     t.integer "album_id"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 2019_10_21_123727) do
     t.string "album_name"
     t.integer "user_id"
     t.boolean "main"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "picture_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
