@@ -27,6 +27,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       @album = Album.create(album_name:"#{@user.username}'s Main Album", main:true, user_id: @user.id)
       redirect_to pictures_path
+    else
+      render :new
     end
   end
 
