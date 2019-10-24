@@ -55,7 +55,7 @@
           
             <% if current_user.likes.find_by(picture_id: pic.id) %>
               <% @like = Like.all.find_by(user_id: current_user.id, picture_id: pic.id) %>
-              <%= button_to "remove like", like_path(@like.id), :method => :delete %>
+              <%= button_to "Remove like", like_path(@like.id), :method => :delete %>
             <% else %>
               <%= form_tag likes_path do %>
                 <%= hidden_field_tag("like[user_id]", current_user.id) %>
