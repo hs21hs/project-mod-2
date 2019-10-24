@@ -1,4 +1,10 @@
 <center>
+<% if @user.errors.any? %>
+    <p>Sorry, your blogger could not be saved due to the following reasons:</p>
+    <% @user.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+    <% end %>
+<% end %>
 <h2>Sign up new User</h2>
 <div>
 <%= render 'form' , user: @user%>

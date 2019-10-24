@@ -13,9 +13,10 @@ class AlbumPicturesController < ApplicationController
     end
 
     def destroy
-        @picture = AlbumPicture.find(params[:id])
-        @picture.destroy
-        redirect_to album_path(current_user)
+        @album_picture = AlbumPicture.find(params[:id])
+        @album_picture.destroy
+
+        redirect_to album_path(@album_picture.album)
     end
 
     private
