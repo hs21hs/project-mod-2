@@ -1,6 +1,6 @@
 class AlbumPicturesController < ApplicationController
     def index
-
+        redirect_to home_index_path
     end
 
     def new
@@ -17,6 +17,10 @@ class AlbumPicturesController < ApplicationController
         @album_picture.destroy
 
         redirect_to album_path(@album_picture.album)
+    end
+
+    def show
+        redirect_to home_index_path
     end
 
     private

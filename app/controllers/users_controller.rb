@@ -1,13 +1,11 @@
 class UsersController < ApplicationController
   
   def index
-    @users = User.all
-
+    redirect_to home_index_path
   end
 
   def new
     @user = User.new
-    
   end
 
   def show
@@ -17,8 +15,6 @@ class UsersController < ApplicationController
       else
         flash.now[:notice] = "Sorry, you can't access this page"
       end
-
-
   end
   
   def create

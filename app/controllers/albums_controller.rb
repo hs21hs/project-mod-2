@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
  
   def index
-    @albums = Album.all
+    redirect_to home_index_path
   end
 
   def show
@@ -22,7 +22,11 @@ class AlbumsController < ApplicationController
   end
 
   def new
-    @album = Album.new
+    if current_user
+      @album = Album.new
+    else
+      redirect_to home_index_path
+    end
   end
 
   def create
