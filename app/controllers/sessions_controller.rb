@@ -1,11 +1,11 @@
 class SessionsController < ApplicationController
 
     def index
+        redirect_to home_index_path
     end
 
     def new
         @user = User.new
-
     end
 
     def create
@@ -16,6 +16,14 @@ class SessionsController < ApplicationController
         else
             flash[:notice] = "Sorry, we can't find a user with that username and password"
             redirect_to new_session_path
+        end
+    end
+
+    def show
+        if current_user
+            redirect_to pictures_path
+        else
+            redirect_to home_index_path
         end
     end
 

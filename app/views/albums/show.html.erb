@@ -28,7 +28,7 @@
    <p><%=flash.now[:notice]%></p>
 <%else%>
     <h2>My Album: <%= @album.album_name %></h2>
-    <p><%= link_to "Back to my profile", user_path(current_user.id)%></p>
+    <p><%= link_to "back to my profile", user_path(current_user.id)%></p>
     <br>
     <br>
     <div>
